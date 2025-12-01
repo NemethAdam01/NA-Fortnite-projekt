@@ -52,9 +52,21 @@ namespace NA_Fortnite_projekt
                     players[i].weapons.Add(weapons[rnd.Next(0,weapons.Count)]);
                 }
             }
-            
-            
 
+            button1.Text = $"{players[0].Name}";
+            button2.Text = $"{players[1].Name}";
+            button3.Text = $"{players[2].Name}";
+            button4.Text = $"{players[3].Name}";
+            button5.Text = $"{players[4].Name}";
+            button6.Text = $"{players[5].Name}";
+            button7.Text = $"{players[6].Name}";
+            button8.Text = $"{players[7].Name}";
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
 
         }
     }
