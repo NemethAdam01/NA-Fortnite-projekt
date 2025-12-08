@@ -47,10 +47,10 @@
             this.pb_item_4 = new System.Windows.Forms.PictureBox();
             this.pb_item_5 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.rtb_items = new System.Windows.Forms.RichTextBox();
+            this.rtb_leader = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btn_sort_kills = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -60,6 +60,10 @@
             this.lbl_ammo_3 = new System.Windows.Forms.Label();
             this.lbl_ammo_2 = new System.Windows.Forms.Label();
             this.lbl_ammo_5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb_item_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_item_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_item_3)).BeginInit();
@@ -85,6 +89,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -94,6 +99,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -152,7 +158,7 @@
             // lbl_Name
             // 
             this.lbl_Name.AutoSize = true;
-            this.lbl_Name.Location = new System.Drawing.Point(31, 117);
+            this.lbl_Name.Location = new System.Drawing.Point(88, 116);
             this.lbl_Name.Name = "lbl_Name";
             this.lbl_Name.Size = new System.Drawing.Size(41, 13);
             this.lbl_Name.TabIndex = 9;
@@ -161,7 +167,7 @@
             // lbl_Level
             // 
             this.lbl_Level.AutoSize = true;
-            this.lbl_Level.Location = new System.Drawing.Point(31, 148);
+            this.lbl_Level.Location = new System.Drawing.Point(88, 147);
             this.lbl_Level.Name = "lbl_Level";
             this.lbl_Level.Size = new System.Drawing.Size(39, 13);
             this.lbl_Level.TabIndex = 10;
@@ -170,7 +176,7 @@
             // lbl_HP
             // 
             this.lbl_HP.AutoSize = true;
-            this.lbl_HP.Location = new System.Drawing.Point(31, 176);
+            this.lbl_HP.Location = new System.Drawing.Point(88, 175);
             this.lbl_HP.Name = "lbl_HP";
             this.lbl_HP.Size = new System.Drawing.Size(25, 13);
             this.lbl_HP.TabIndex = 11;
@@ -179,7 +185,7 @@
             // lbl_Shield
             // 
             this.lbl_Shield.AutoSize = true;
-            this.lbl_Shield.Location = new System.Drawing.Point(31, 199);
+            this.lbl_Shield.Location = new System.Drawing.Point(88, 198);
             this.lbl_Shield.Name = "lbl_Shield";
             this.lbl_Shield.Size = new System.Drawing.Size(39, 13);
             this.lbl_Shield.TabIndex = 12;
@@ -234,21 +240,21 @@
             this.label2.TabIndex = 18;
             this.label2.Text = "Items:";
             // 
-            // richTextBox1
+            // rtb_items
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(235, 110);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(164, 128);
-            this.richTextBox1.TabIndex = 19;
-            this.richTextBox1.Text = "";
+            this.rtb_items.Location = new System.Drawing.Point(235, 110);
+            this.rtb_items.Name = "rtb_items";
+            this.rtb_items.Size = new System.Drawing.Size(164, 128);
+            this.rtb_items.TabIndex = 19;
+            this.rtb_items.Text = "";
             // 
-            // richTextBox2
+            // rtb_leader
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(523, 110);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(314, 128);
-            this.richTextBox2.TabIndex = 20;
-            this.richTextBox2.Text = "";
+            this.rtb_leader.Location = new System.Drawing.Point(523, 110);
+            this.rtb_leader.Name = "rtb_leader";
+            this.rtb_leader.Size = new System.Drawing.Size(314, 128);
+            this.rtb_leader.TabIndex = 20;
+            this.rtb_leader.Text = "";
             // 
             // label3
             // 
@@ -259,14 +265,15 @@
             this.label3.TabIndex = 21;
             this.label3.Text = "Leaderboard:";
             // 
-            // button9
+            // btn_sort_kills
             // 
-            this.button9.Location = new System.Drawing.Point(442, 137);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 22;
-            this.button9.Text = "Kills";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btn_sort_kills.Location = new System.Drawing.Point(442, 137);
+            this.btn_sort_kills.Name = "btn_sort_kills";
+            this.btn_sort_kills.Size = new System.Drawing.Size(75, 23);
+            this.btn_sort_kills.TabIndex = 22;
+            this.btn_sort_kills.Text = "Kills";
+            this.btn_sort_kills.UseVisualStyleBackColor = true;
+            this.btn_sort_kills.Click += new System.EventHandler(this.btn_sort_kills_Click);
             // 
             // button10
             // 
@@ -349,11 +356,51 @@
             this.lbl_ammo_5.TabIndex = 31;
             this.lbl_ammo_5.Text = "1";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(22, 198);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "Shield:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(22, 175);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(25, 13);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "HP:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(22, 147);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 13);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Level: ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(22, 116);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 13);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Name: ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(851, 450);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.lbl_ammo_5);
             this.Controls.Add(this.lbl_ammo_2);
             this.Controls.Add(this.lbl_ammo_3);
@@ -363,10 +410,10 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
+            this.Controls.Add(this.btn_sort_kills);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rtb_leader);
+            this.Controls.Add(this.rtb_items);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pb_item_5);
             this.Controls.Add(this.pb_item_4);
@@ -420,10 +467,10 @@
         private System.Windows.Forms.PictureBox pb_item_4;
         private System.Windows.Forms.PictureBox pb_item_5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox rtb_items;
+        private System.Windows.Forms.RichTextBox rtb_leader;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btn_sort_kills;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label label4;
@@ -433,6 +480,10 @@
         private System.Windows.Forms.Label lbl_ammo_3;
         private System.Windows.Forms.Label lbl_ammo_2;
         private System.Windows.Forms.Label lbl_ammo_5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
 

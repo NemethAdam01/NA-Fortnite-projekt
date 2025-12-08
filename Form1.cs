@@ -24,8 +24,8 @@ namespace NA_Fortnite_projekt
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string namesBe = File.ReadAllText("names.txt",Encoding.UTF8);
-            string weaponBe  = File.ReadAllText("weapons.txt", Encoding.UTF8);
+            string namesBe = File.ReadAllText("names.txt", Encoding.UTF8);
+            string weaponBe = File.ReadAllText("weapons.txt", Encoding.UTF8);
             string cosmeticsBe = File.ReadAllText("items.txt", Encoding.UTF8);
             List<string> nevek = new List<string>();
             foreach (var item in namesBe.Split(','))
@@ -45,11 +45,11 @@ namespace NA_Fortnite_projekt
                 players.Add(new Player(nevek[rnd.Next(0, nevek.Count)]));
                 for (int j = 0; j < 3; j++)
                 {
-                    players[i].cosmetics.Add(cosmetics[rnd.Next(0,cosmetics.Count)]);
+                    players[i].cosmetics.Add(cosmetics[rnd.Next(0, cosmetics.Count)]);
                 }
                 for (int k = 0; k < 5; k++)
                 {
-                    players[i].weapons.Add(weapons[rnd.Next(0,weapons.Count)]);
+                    players[i].weapons.Add(weapons[rnd.Next(0, weapons.Count)]);
                 }
             }
 
@@ -62,12 +62,121 @@ namespace NA_Fortnite_projekt
             button7.Text = $"{players[6].Name}";
             button8.Text = $"{players[7].Name}";
 
+            
+        }
 
+        
+        
+
+        private void btn_sort_kills_Click(object sender, EventArgs e)
+        {
+            rtb_leader.Clear();
+            var sortedByKills = players
+                .OrderByDescending(p => p.Kills)
+                .ToList();
+
+            int position = 1;
+            foreach (var p in sortedByKills)
+            {
+                rtb_leader.AppendText($"{position}. {p.Name} - Kills: {p.Kills}\n");
+                position++;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            lbl_ammo_1.Text = "";
+            lbl_ammo_2.Text = "";
+            lbl_ammo_3.Text = "";
+            lbl_ammo_4.Text = "";
+            lbl_ammo_5.Text = "";
 
+
+            rtb_items.Clear();
+
+            lbl_Name.Text = $"{players[0].Name}";
+            lbl_Level.Text = $"{players[0].Level}";
+            lbl_HP.Text = $"{players[0].HP}";
+            lbl_Shield.Text = $"{players[0].Shield}";
+            foreach (var item in players[0].cosmetics)
+            {
+                rtb_items.Text += $"{item}\n";
+            }
+            pb_item_1.Image = Image.FromFile($"{players[0].weapons[0].Name}.jpg");
+            pb_item_2.Image = Image.FromFile($"{players[0].weapons[1].Name}.jpg");
+            pb_item_3.Image = Image.FromFile($"{players[0].weapons[2].Name}.jpg");
+            pb_item_4.Image = Image.FromFile($"{players[0].weapons[3].Name}.jpg");
+            pb_item_5.Image = Image.FromFile($"{players[0].weapons[4].Name}.jpg");
+
+            lbl_ammo_1.Text += $"{players[0].weapons[0].CurrentAmmo}/{players[0].weapons[0].MagazineSize}";
+            lbl_ammo_2.Text += $"{players[0].weapons[1].CurrentAmmo}/{players[0].weapons[1].MagazineSize}";
+            lbl_ammo_3.Text += $"{players[0].weapons[2].CurrentAmmo}/{players[0].weapons[2].MagazineSize}";
+            lbl_ammo_4.Text += $"{players[0].weapons[3].CurrentAmmo}/{players[0].weapons[3].MagazineSize}";
+            lbl_ammo_5.Text += $"{players[0].weapons[4].CurrentAmmo}/{players[0].weapons[4].MagazineSize}";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            lbl_ammo_1.Text = "";
+            lbl_ammo_2.Text = "";
+            lbl_ammo_3.Text = "";
+            lbl_ammo_4.Text = "";
+            lbl_ammo_5.Text = "";
+
+
+            rtb_items.Clear();
+
+            lbl_Name.Text = $"{players[1].Name}";
+            lbl_Level.Text = $"{players[1].Level}";
+            lbl_HP.Text = $"{players[1].HP}";
+            lbl_Shield.Text = $"{players[1].Shield}";
+            foreach (var item in players[1].cosmetics)
+            {
+                rtb_items.Text += $"{item}\n";
+            }
+            pb_item_1.Image = Image.FromFile($"{players[1].weapons[0].Name}.jpg");
+            pb_item_2.Image = Image.FromFile($"{players[1].weapons[1].Name}.jpg");
+            pb_item_3.Image = Image.FromFile($"{players[1].weapons[2].Name}.jpg");
+            pb_item_4.Image = Image.FromFile($"{players[1].weapons[3].Name}.jpg");
+            pb_item_5.Image = Image.FromFile($"{players[1].weapons[4].Name}.jpg");
+
+            lbl_ammo_1.Text += $"{players[1].weapons[0].CurrentAmmo}/{players[1].weapons[0].MagazineSize}";
+            lbl_ammo_2.Text += $"{players[1].weapons[1].CurrentAmmo}/{players[1].weapons[1].MagazineSize}";
+            lbl_ammo_3.Text += $"{players[1].weapons[2].CurrentAmmo}/{players[1].weapons[2].MagazineSize}";
+            lbl_ammo_4.Text += $"{players[1].weapons[3].CurrentAmmo}/{players[1].weapons[3].MagazineSize}";
+            lbl_ammo_5.Text += $"{players[1].weapons[4].CurrentAmmo}/{players[1].weapons[4].MagazineSize}";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            lbl_ammo_1.Text = "";
+            lbl_ammo_2.Text = "";
+            lbl_ammo_3.Text = "";
+            lbl_ammo_4.Text = "";
+            lbl_ammo_5.Text = "";
+
+
+            rtb_items.Clear();
+
+            lbl_Name.Text = $"{players[2].Name}";
+            lbl_Level.Text = $"{players[2].Level}";
+            lbl_HP.Text = $"{players[2].HP}";
+            lbl_Shield.Text = $"{players[2].Shield}";
+            foreach (var item in players[2].cosmetics)
+            {
+                rtb_items.Text += $"{item}\n";
+            }
+            pb_item_1.Image = Image.FromFile($"{players[2].weapons[0].Name}.jpg");
+            pb_item_2.Image = Image.FromFile($"{players[2].weapons[1].Name}.jpg");
+            pb_item_3.Image = Image.FromFile($"{players[2].weapons[2].Name}.jpg");
+            pb_item_4.Image = Image.FromFile($"{players[2].weapons[3].Name}.jpg");
+            pb_item_5.Image = Image.FromFile($"{players[2].weapons[4].Name}.jpg");
+
+            lbl_ammo_1.Text += $"{players[2].weapons[0].CurrentAmmo}/{players[2].weapons[0].MagazineSize}";
+            lbl_ammo_2.Text += $"{players[2].weapons[1].CurrentAmmo}/{players[2].weapons[1].MagazineSize}";
+            lbl_ammo_3.Text += $"{players[2].weapons[2].CurrentAmmo}/{players[2].weapons[2].MagazineSize}";
+            lbl_ammo_4.Text += $"{players[2].weapons[3].CurrentAmmo}/{players[2].weapons[3].MagazineSize}";
+            lbl_ammo_5.Text += $"{players[2].weapons[4].CurrentAmmo}/{players[2].weapons[4].MagazineSize}";
         }
     }
     public class Player
@@ -76,6 +185,7 @@ namespace NA_Fortnite_projekt
         public int Level { get; set; }
         public int HP { get; set; }
         public int Shield { get; set; }
+        public int Kills { get; set; }
         public List<string> cosmetics = new List<string>();
         public List<Weapon> weapons = new List<Weapon>();
         public Player(string nev)
@@ -85,6 +195,7 @@ namespace NA_Fortnite_projekt
             Level = rnd.Next(1, 201);
             HP = rnd.Next(1, 101);
             Shield = rnd.Next(1, 101);
+            Kills = rnd.Next(0, 12);
         }
     }
     public class Weapon
