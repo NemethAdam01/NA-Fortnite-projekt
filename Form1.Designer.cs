@@ -51,8 +51,8 @@
             this.rtb_leader = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_sort_kills = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.btn_sort_hp = new System.Windows.Forms.Button();
+            this.btn_sort_xp = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_ammo_1 = new System.Windows.Forms.Label();
@@ -64,11 +64,20 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.lbl_item1 = new System.Windows.Forms.Label();
+            this.lbl_item2 = new System.Windows.Forms.Label();
+            this.lbl_item3 = new System.Windows.Forms.Label();
+            this.pb_cosmetic3 = new System.Windows.Forms.PictureBox();
+            this.pb_cosmetic2 = new System.Windows.Forms.PictureBox();
+            this.pb_cosmetic1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pb_item_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_item_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_item_3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_item_4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_item_5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_cosmetic3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_cosmetic2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_cosmetic1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -109,6 +118,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -118,6 +128,7 @@
             this.button5.TabIndex = 7;
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -127,6 +138,7 @@
             this.button6.TabIndex = 6;
             this.button6.Text = "button6";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -136,6 +148,7 @@
             this.button7.TabIndex = 5;
             this.button7.Text = "button7";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -145,6 +158,7 @@
             this.button8.TabIndex = 4;
             this.button8.Text = "button8";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // label1
             // 
@@ -242,6 +256,7 @@
             // 
             // rtb_items
             // 
+            this.rtb_items.Enabled = false;
             this.rtb_items.Location = new System.Drawing.Point(235, 110);
             this.rtb_items.Name = "rtb_items";
             this.rtb_items.Size = new System.Drawing.Size(164, 128);
@@ -250,6 +265,7 @@
             // 
             // rtb_leader
             // 
+            this.rtb_leader.Enabled = false;
             this.rtb_leader.Location = new System.Drawing.Point(523, 110);
             this.rtb_leader.Name = "rtb_leader";
             this.rtb_leader.Size = new System.Drawing.Size(314, 128);
@@ -275,23 +291,25 @@
             this.btn_sort_kills.UseVisualStyleBackColor = true;
             this.btn_sort_kills.Click += new System.EventHandler(this.btn_sort_kills_Click);
             // 
-            // button10
+            // btn_sort_hp
             // 
-            this.button10.Location = new System.Drawing.Point(442, 166);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 23;
-            this.button10.Text = "HP";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btn_sort_hp.Location = new System.Drawing.Point(442, 166);
+            this.btn_sort_hp.Name = "btn_sort_hp";
+            this.btn_sort_hp.Size = new System.Drawing.Size(75, 23);
+            this.btn_sort_hp.TabIndex = 23;
+            this.btn_sort_hp.Text = "HP";
+            this.btn_sort_hp.UseVisualStyleBackColor = true;
+            this.btn_sort_hp.Click += new System.EventHandler(this.btn_sort_hp_Click);
             // 
-            // button11
+            // btn_sort_xp
             // 
-            this.button11.Location = new System.Drawing.Point(442, 194);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 24;
-            this.button11.Text = "XP";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btn_sort_xp.Location = new System.Drawing.Point(442, 194);
+            this.btn_sort_xp.Name = "btn_sort_xp";
+            this.btn_sort_xp.Size = new System.Drawing.Size(75, 23);
+            this.btn_sort_xp.TabIndex = 24;
+            this.btn_sort_xp.Text = "XP";
+            this.btn_sort_xp.UseVisualStyleBackColor = true;
+            this.btn_sort_xp.Click += new System.EventHandler(this.btn_sort_xp_Click);
             // 
             // label4
             // 
@@ -392,11 +410,68 @@
             this.label9.TabIndex = 32;
             this.label9.Text = "Name: ";
             // 
+            // lbl_item1
+            // 
+            this.lbl_item1.AutoSize = true;
+            this.lbl_item1.Location = new System.Drawing.Point(246, 454);
+            this.lbl_item1.Name = "lbl_item1";
+            this.lbl_item1.Size = new System.Drawing.Size(13, 13);
+            this.lbl_item1.TabIndex = 41;
+            this.lbl_item1.Text = "1";
+            // 
+            // lbl_item2
+            // 
+            this.lbl_item2.AutoSize = true;
+            this.lbl_item2.Location = new System.Drawing.Point(408, 456);
+            this.lbl_item2.Name = "lbl_item2";
+            this.lbl_item2.Size = new System.Drawing.Size(13, 13);
+            this.lbl_item2.TabIndex = 40;
+            this.lbl_item2.Text = "1";
+            // 
+            // lbl_item3
+            // 
+            this.lbl_item3.AutoSize = true;
+            this.lbl_item3.Location = new System.Drawing.Point(578, 456);
+            this.lbl_item3.Name = "lbl_item3";
+            this.lbl_item3.Size = new System.Drawing.Size(13, 13);
+            this.lbl_item3.TabIndex = 39;
+            this.lbl_item3.Text = "1";
+            // 
+            // pb_cosmetic3
+            // 
+            this.pb_cosmetic3.Location = new System.Drawing.Point(511, 472);
+            this.pb_cosmetic3.Name = "pb_cosmetic3";
+            this.pb_cosmetic3.Size = new System.Drawing.Size(160, 160);
+            this.pb_cosmetic3.TabIndex = 38;
+            this.pb_cosmetic3.TabStop = false;
+            // 
+            // pb_cosmetic2
+            // 
+            this.pb_cosmetic2.Location = new System.Drawing.Point(345, 472);
+            this.pb_cosmetic2.Name = "pb_cosmetic2";
+            this.pb_cosmetic2.Size = new System.Drawing.Size(160, 160);
+            this.pb_cosmetic2.TabIndex = 37;
+            this.pb_cosmetic2.TabStop = false;
+            // 
+            // pb_cosmetic1
+            // 
+            this.pb_cosmetic1.Location = new System.Drawing.Point(179, 472);
+            this.pb_cosmetic1.Name = "pb_cosmetic1";
+            this.pb_cosmetic1.Size = new System.Drawing.Size(160, 160);
+            this.pb_cosmetic1.TabIndex = 36;
+            this.pb_cosmetic1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(851, 450);
+            this.ClientSize = new System.Drawing.Size(851, 644);
+            this.Controls.Add(this.lbl_item1);
+            this.Controls.Add(this.lbl_item2);
+            this.Controls.Add(this.lbl_item3);
+            this.Controls.Add(this.pb_cosmetic3);
+            this.Controls.Add(this.pb_cosmetic2);
+            this.Controls.Add(this.pb_cosmetic1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
@@ -408,8 +483,8 @@
             this.Controls.Add(this.lbl_ammo_1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button10);
+            this.Controls.Add(this.btn_sort_xp);
+            this.Controls.Add(this.btn_sort_hp);
             this.Controls.Add(this.btn_sort_kills);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.rtb_leader);
@@ -441,6 +516,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_item_3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_item_4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_item_5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_cosmetic3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_cosmetic2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_cosmetic1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -471,8 +549,8 @@
         private System.Windows.Forms.RichTextBox rtb_leader;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_sort_kills;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btn_sort_hp;
+        private System.Windows.Forms.Button btn_sort_xp;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbl_ammo_1;
@@ -484,6 +562,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbl_item1;
+        private System.Windows.Forms.Label lbl_item2;
+        private System.Windows.Forms.Label lbl_item3;
+        private System.Windows.Forms.PictureBox pb_cosmetic3;
+        private System.Windows.Forms.PictureBox pb_cosmetic2;
+        private System.Windows.Forms.PictureBox pb_cosmetic1;
     }
 }
 
