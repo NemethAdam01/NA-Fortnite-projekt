@@ -85,6 +85,10 @@ namespace NA_Fortnite_projekt
             lbl_Level.Text = $"{players[0].Level}";
             lbl_HP.Text = $"{players[0].HP}";
             lbl_Shield.Text = $"{players[0].Shield}";
+            foreach (var item in players[0].weapons)
+            {
+                rtb_items.Text += $"{item.Name}\n";
+            }
             foreach (var item in players[0].cosmetics)
             {
                 rtb_items.Text += $"{item}\n";
@@ -124,6 +128,10 @@ namespace NA_Fortnite_projekt
             lbl_Level.Text = $"{players[1].Level}";
             lbl_HP.Text = $"{players[1].HP}";
             lbl_Shield.Text = $"{players[1].Shield}";
+            foreach (var item in players[1].weapons)
+            {
+                rtb_items.Text += $"{item.Name}\n";
+            }
             foreach (var item in players[1].cosmetics)
             {
                 rtb_items.Text += $"{item}\n";
@@ -163,6 +171,10 @@ namespace NA_Fortnite_projekt
             lbl_Level.Text = $"{players[2].Level}";
             lbl_HP.Text = $"{players[2].HP}";
             lbl_Shield.Text = $"{players[2].Shield}";
+            foreach (var item in players[2].weapons)
+            {
+                rtb_items.Text += $"{item.Name}\n";
+            }
             foreach (var item in players[2].cosmetics)
             {
                 rtb_items.Text += $"{item}\n";
@@ -202,6 +214,10 @@ namespace NA_Fortnite_projekt
             lbl_Level.Text = $"{players[3].Level}";
             lbl_HP.Text = $"{players[3].HP}";
             lbl_Shield.Text = $"{players[3].Shield}";
+            foreach (var item in players[3].weapons)
+            {
+                rtb_items.Text += $"{item.Name}\n";
+            }
             foreach (var item in players[3].cosmetics)
             {
                 rtb_items.Text += $"{item}\n";
@@ -241,6 +257,10 @@ namespace NA_Fortnite_projekt
             lbl_Level.Text = $"{players[4].Level}";
             lbl_HP.Text = $"{players[4].HP}";
             lbl_Shield.Text = $"{players[4].Shield}";
+            foreach (var item in players[4].weapons)
+            {
+                rtb_items.Text += $"{item.Name}\n";
+            }
             foreach (var item in players[4].cosmetics)
             {
                 rtb_items.Text += $"{item}\n";
@@ -280,6 +300,10 @@ namespace NA_Fortnite_projekt
             lbl_Level.Text = $"{players[5].Level}";
             lbl_HP.Text = $"{players[5].HP}";
             lbl_Shield.Text = $"{players[5].Shield}";
+            foreach (var item in players[5].weapons)
+            {
+                rtb_items.Text += $"{item.Name}\n";
+            }
             foreach (var item in players[5].cosmetics)
             {
                 rtb_items.Text += $"{item}\n";
@@ -319,6 +343,10 @@ namespace NA_Fortnite_projekt
             lbl_Level.Text = $"{players[6].Level}";
             lbl_HP.Text = $"{players[6].HP}";
             lbl_Shield.Text = $"{players[6].Shield}";
+            foreach (var item in players[6].weapons)
+            {
+                rtb_items.Text += $"{item.Name}\n";
+            }
             foreach (var item in players[6].cosmetics)
             {
                 rtb_items.Text += $"{item}\n";
@@ -358,6 +386,10 @@ namespace NA_Fortnite_projekt
             lbl_Level.Text = $"{players[7].Level}";
             lbl_HP.Text = $"{players[7].HP}";
             lbl_Shield.Text = $"{players[7].Shield}";
+            foreach (var item in players[7].weapons)
+            {
+                rtb_items.Text += $"{item.Name}\n";
+            }
             foreach (var item in players[7].cosmetics)
             {
                 rtb_items.Text += $"{item}\n";
